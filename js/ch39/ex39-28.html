@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex39-28</h1>
+    <ul id="fruits">
+        <li class="apple">사과</li>
+        <li class="banana">바나나</li>
+        <li class="orange">오렌지</li>
+    </ul>
+    <script>
+        const fruitsElem = document.getElementById('fruits');
+
+        console.log(fruitsElem.childNodes); // 필요없음
+        console.log(fruitsElem.children); // 쓸만함
+
+        console.log(fruitsElem.firstChild);// 필요없음
+        console.log(fruitsElem.firstElementChild);// 쓸만함
+
+        console.log(fruitsElem.lastChild); //필요없음
+        console.log(fruitsElem.lastElementChild); // 쓸만함
+    </script>
+</body>
+</html>

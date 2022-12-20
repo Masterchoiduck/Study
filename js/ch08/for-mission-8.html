@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>for-mission-8</h1>
+    <script>
+        // const star = parseInt(prompt('찍고 싶은 별 수를 입력해주세요.'));
+        // var i ='';
+        // for(k=1;k<=star;k++) {
+        // for (z=1;z<=star;z++) {
+        //     i += '*'
+        // }
+        // i += '\n';
+        // }
+        // console.log(i);
+
+        // const star = parseInt(prompt('찍고 싶은 별 수를 입력해주세요.'));
+        // var a = ''
+        // var b = ''
+        // for (var i=1;i<=star;i++) {
+        //     a += '*'
+        // }
+        // for (var j=1;j<=star;j++) {
+        //     b +=`${a} \n`
+        // }
+        // console.log(b);
+
+        const star = parseInt(prompt('찍고 싶은 별 수를 입력해주세요.'));
+        var a=''
+            for (var z=1;z<=star*star;z++) {
+                a += '*'
+                if (z%star===0) {
+                    a += `\n`
+                } 
+                }
+        console.log(a);
+    </script>
+</body>
+</html>

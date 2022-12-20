@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>exam04-05.html</h1>
+    <script>
+        var n1;
+        console.log(n1);
+
+        var n2 = 10;
+        console.log(n2);
+
+        console.log(n3);
+
+        var n3 = 20
+        /*
+        자바스크립의 해석 순서 (함수단위로 올라감)
+        var n1;
+        var n2;
+        var n3;
+        console.log(n1);
+        n2 = 10;
+        console.log(n2);
+        n3 = 20
+        */
+    //고로 n3은 undefined 뜸
+    var n4, n5 = 22, n6;
+    // n5 =  undefined;
+    console.log(n4);
+    console.log(n5);
+    console.log(n6);
+
+    // const N7; //선언 후 초기화 X
+    // N7 = 10;
+    
+    const N8 = 40; //선언과 초기화 동시!
+    console.log(N8);
+    N8 = 50;
+    console.log(N8);
+    console.log('ddddd');
+    </script>
+</body>
+</html>

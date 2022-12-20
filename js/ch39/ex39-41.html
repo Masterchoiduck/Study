@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="foo1">Hello <span>world!!</span></div>
+    <div id="foo2">Hello <span>world!!</span></div>
+    <div>''<h1></h1></div>
+    <script>
+        const fooElem1 = document.querySelector('#foo1');
+        const fooElem2 = document.querySelector('#foo2');
+        const fooCtnt = fooElem1.innerHTML;
+        console.log(fooCtnt);
+
+        const fooCtnt2 = fooElem2.innerText;
+        console.log(fooCtnt2);
+
+        fooElem1.innerHTML = `<h2>
+            반가워
+            <h2>`;
+
+        fooElem2.innerText = `<h2>
+            반가워
+            <h2>`;
+    </script>
+</body>
+</html>

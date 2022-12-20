@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex06-02-string.html</h1>
+    <script>
+        var str;
+        str = '문자열';
+        console.log(str);
+
+        str = "문자열";
+        console.log(str);
+
+        str = `문자열`; //백틱 (ES6)
+        console.log(str);
+        // 백틱예제 참고
+
+        var name = '홍길동';
+        console.log('제 이름은 ' + name + '입니다');
+        // console.log('제 이름은 %s입니다',name)
+
+        console.log(`제 이름은 ${name}입니다.`);
+
+        const result = `제 이름은 ${name}입니다.`;
+        console.log(result);
+
+        let result2 = result;
+        console.log(result2);
+        result2 += 'ㅇㅇㅇㅇ';
+        console.log('1: ' + result);
+        console.log('2: ' + result2);
+
+        const msg1 = '안\'녕\t반가워';
+        console.log(msg1);
+        document.write(msg1);
+    </script>
+</body>
+</html>

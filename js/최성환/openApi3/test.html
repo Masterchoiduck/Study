@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function() {
+    'use strict';
+    //공공데이터포털에서 받은 인증키
+    const KEY = 'I8OEGleeOPaqJN3uweR%2Fkp23OeQUWCMn3VxsbWy4d116lVWFtlw%2FhqzKmb7nwFRKV8uv7uVuc%2FQkE8ykYJUR2w%3D%3D';
+    //페이지번호
+    const pageNo = '100'
+    //한 페이지 결과 수 (nin = 0 / max = 100)
+    const numOfRows = '100'
+    //1: 남성 2: 여성
+    const sexdstn = '1'
+    //Y: 사망 N: 생존
+    const nk_prsn_death_at = 'N'
+    //시작 출생일자
+    const bgng_ymd = '19300101'
+    //종료 출생일자
+    const end_ymd = '20221109'
+
+    const url = `https://apis.data.go.kr/1250000/prsn/getPrsn?serviceKey=${KEY}&pageNo=${pageNo}&numOfRows=${numOfRows}&sexdstn=${sexdstn}&nk_prsn_death_at=${nk_prsn_death_at}&bgng_ymd=${bgng_ymd}&end_ymd=${end_ymd}`
+
+    console.log(url);
+})();
+    </script>
+</body>
+</html>

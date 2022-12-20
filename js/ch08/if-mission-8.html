@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>if-mission-8.html</h1>
+    <script>
+        // 10자리가 90이상이면 A
+                    // 80이상이면 B
+                    // 70이상이면 c
+                    // 60이상이면 d
+                    // 50이상이면 f
+        // F이상은 1의 자리가 7~9 +
+                    //       4~6 없음
+                    //       0~3 -
+        // 100점은 A+
+        // 60점 미만은 무조건 F
+
+        // 66점은 D
+        // 68점은 D+
+        // 63점은 D-
+        const score = parseInt(prompt())
+        if (score === 100) {
+            console.log(`A+`)
+        }
+            if (score>=90) {
+                if (score<=93) {
+                    console.log(`A-`);
+                }else if (score<=96) {
+                    console.log(`A`);
+                }else if (score<=99) {
+                    console.log(`A+`);
+                }
+            }
+        else if (score>=80) {
+                if (score<=83) {
+                    console.log(`B-`);
+                }else if (score<=86) {
+                    console.log(`B`);
+                }else if (score<=89) {
+                    console.log(`B+`);
+                }
+            }
+        else if (score>=70) {
+                if (score<=73) {
+                    console.log(`C-`);
+                }else if (score<=76) {
+                    console.log(`C`);
+                }else if (score<=79) {
+                    console.log(`C+`);
+                }
+            }
+        else if (score>=60) {
+                if (score<=63) {
+                    console.log(`D-`);
+                }else if (score<=66) {
+                    console.log(`D`);
+                }else if (score<=69) {
+                    console.log(`D+`);
+                }
+            }
+        else {
+            console.log(`F`)
+        }
+    </script>
+</body>
+</html>

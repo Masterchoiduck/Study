@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>연습
+    </h1>
+    <script>
+    function solution(num, total) {
+        var answer = [];
+        return answer;
+    }
+    const number = 7
+    const sum = 100
+    var num = 0
+    var answer = [];
+    for(;;) {
+        for(var i=sum;i>-10000;i--) {
+            a = 0
+            for(var k=i-number+1;k<=i;k++) {
+                a += k
+                console.log(k);
+                if(a===sum) {
+                    console.log(`sum : ${a}`);
+                    console.log(`k : ${k}`);
+                    num = k-number+1;
+                    console.log(`num : ${num}`);
+                    break;
+                }
+            }
+            console.log(`${a}------------------`);
+        }
+        break;
+    }
+    for(var i=num;i<num+number;i++) {
+        console.log(i);
+    }
+    </script>
+</body>
+</html>

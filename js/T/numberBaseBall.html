@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>numberBaseBall</h1>
+    <script>
+        const numArr = [0,0,0];
+        var i=0;
+        while(i<numArr.length) {
+            const rNum = parseInt(Math.random()*9)+1;
+            var isDuplicated = false;
+            for(z=0;z<i;z++){
+                if(rNum===numArr[z]) {
+                    isDuplicated = true;
+                }
+            }
+            if(isDuplicated) {continue;}
+            numArr[i++] = rNum
+        }
+        console.log(numArr + '')
+
+        // const numArr = [0,0,0];
+        // for(i=0;i<numArr.length;i++) {
+        //     const rNum = parseInt(Math.random()*9)+1;
+        //     var isDuplicated = false;
+        //     for(z=0;z<i;z++) {
+        //         if(rNum === numArr[z]) {
+        //             i--;
+        //             continue;
+        //             break;
+        //         }
+        //     }
+        //     if(isDuplicated) {
+        //         i--;
+        //         continue;
+        //     }
+        // }
+            for (; ;) {
+            const answer = prompt('숫자 세개를 입력해 주세요.(구분은 빈칸)');
+            //1 2 3
+            console.log(`내가 예측한 숫자 : ${answer}`);
+            const answerArr = answer.split(' ');
+            const answerNumberArr = answerArr.map(Number);
+
+            let s=0, b=0, o=0;
+            for(i=0;i<numArr.length;i++) {
+                for(let z=0;z<answerNumberArr.length;z++){
+                    if(numArr[i]===answerNumberArr[z]) {
+                        if(i===z) {
+                            s++;
+                        } else {
+                            b++;
+                        }
+                    }
+                }
+            }
+            console.log(`S : ${s}, B:${b}, o : ${numArr.length - (s+b)}`)
+            if(s === numArr.length) {
+                break;
+            }
+        }
+        console.log('게임이끝났습니다')
+    </script>
+</body>
+</html>

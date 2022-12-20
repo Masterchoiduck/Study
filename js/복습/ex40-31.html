@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {display: flex; padding: 0px;}
+        li {list-style:none; padding: 10px; margin: 0px auto; padding: 0px;}
+        .click{color: red;}
+    </style>
+</head>
+<body>
+    <h1>ex40-31</h1>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+        <li>Strawberry</li>
+        <li>Mango</li>
+    </ul>
+    <input type="text">
+    <button>추가</button>
+    <p>선택된 과일 <em>???</em></p>
+    <script>
+        const ulElem=document.querySelector('ul');
+        const inputElem=document.querySelector('input');
+        const buttonElem=document.querySelector('button');
+
+        function event(){
+            const li = document.createElement('li');
+            li.innerText = inputElem.value;
+            ulElem.append(li);
+            inputElem.value=''
+        }
+    buttonElem.addEventListener('click', e=>{
+        event()
+    })
+    inputElem.addEventListener('keyup', e=>{
+        if(inputElem.value=''){return}
+        if(e.key!=='Enter') {
+            return
+        }
+        // else if(e.keyCode===13) {
+        //     ulElem.innerHTML=''
+        // }
+        // else {
+        event()
+        }
+    )
+    </script>
+</body>
+</html>

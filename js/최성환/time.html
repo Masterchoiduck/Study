@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="Frm">
+        <input type="datetime-local" name="time">
+        <input type="button" name="button" value="확인">
+        <div name="div"></div>
+    </form>
+</body>
+<script>
+    // 입력된 시간
+    $Frm=document.querySelector('#Frm')
+    $Frm.button.addEventListener('click', e=>{
+        var dateTime=$Frm.time.value.replaceAll('-','');
+        dateTime=dateTime.replaceAll('T','');
+        dateTime=dateTime.replaceAll(':','');
+        var Time=dateTime
+        todayF(Time)
+    })
+    function todayF(Time){        
+            const interval = setInterval(function() {
+            var now = new Date();   //현재시간
+            var year = now.getFullYear();   //현재 연도
+            var month = now.getMonth()+1;   //현재 달 
+            if((month+"").length < 2){
+                month="0"+month;
+            }
+            var date = now.getDate();      //현재 날짜.
+            if((date+"").length < 2){
+                date="0"+date;      
+            }
+            var hour = now.getHours();   //현재 시간.
+            if((hour+"").length < 2){
+            hour="0"+hour;      
+            }
+            var minutes=now.getMinutes(); //현재 분
+            if((minutes+"").length < 2){
+                minutes="0"+minutes;
+            }
+            //오늘 날짜 완성.
+            var today = year + "" + month + "" + date+ "" +hour+ "" +minutes;
+            // console.log(`현재 : ${today}\n지정시간 : ${Time}`); //테스트
+            if(today===Time) {
+                alert('성공');
+                clearInterval(interval);   
+            }
+        }, 1000);
+    }
+</script>
+</html>

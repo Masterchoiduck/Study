@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>exam03-01.html</h1>
+    <div id="counter">0</div>
+    <button id="increase">+</button>
+    <button id="decrease">-</button>
+    <script>
+        const COUNTER = document.getElementById('counter');
+        const INCREASE = document.getElementById('increase');
+        const DECREASE = document.getElementById('decrease');
+
+        let num = COUNTER.innerText;
+        num = Number(num);
+        // parseInt(COUNTER.innerText); 이랑 같은말
+        // 현제 num의 값이 '0'이라는 문자열인데 숫자열로 변경
+
+        function render() {
+            COUNTER.innerText = num;
+        //  COUNTER.innerHTML = num;
+        }
+        INCREASE.addEventListener('click', function(){
+            num = num + 1;
+            //num +=1;
+            //num++;
+            render();
+        })
+        DECREASE.addEventListener('click',function(){
+            num = num - 1;
+            render();
+        })
+        // function render() {} 이랑 const render = function() {} 같은말
+        // render(); 은 호출
+    </script>
+</body>
+</html>

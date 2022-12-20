@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ToDo-List</h1>
+    <input type="text" placeholder="할 일">
+    <button>등록</button>
+    <ul></ul>
+    <script>
+        const InputElem=document.querySelector('input');
+        const ulElem=document.querySelector('ul');
+        const buttonElem=document.querySelector('button');
+        const fragment = document.createDocumentFragment();
+        InputElem.addEventListener('keyup', e=>{
+            const liElem= document.createElement('li');
+            if(e.key!=='Enter'){return;};
+            liElem.innerText+=e.target.value
+            ulElem.append(liElem)
+            e.target.value=''
+            // if(buttonElem.addEventListener('click')){
+            //     const liElem= document.createElement('li');
+            //     liElem.innerText+=InputElem.value;
+            //     ulElem.append(liElem);
+            //     InputElem.value=''
+            // };
+
+            buttonElem.addEventListener('click',function(){
+            const liElem= document.createElement('li');
+            liElem.innerText+=InputElem.value
+            ulElem.append(liElem);
+            InputElem.value=''
+            })
+        })
+    </script>
+</body>
+</html>

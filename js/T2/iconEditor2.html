@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {border-collapse: collapse;}
+        table,td{border: 1px solid #ccc;cursor: pointer}
+        td{padding: 15px;}
+    </style>
+</head>
+<body>
+    <h1>iconEditor</h1>
+    <div>
+        가로: <input type="number" id="id_width">
+        세로: <input type="number" id="id_height">
+        <input type="button" id="id_create" value="테이블 생성">
+    </div>
+    <div id="container"></div>
+    <script>
+        const idWidth=document.querySelector('#id_width');
+        const idHeigth=document.querySelector('#id_height');
+        const idCreate=document.querySelector('#id_create');
+        idCreate.addEventListener('click',()=> {
+            const nx = Number(idWidth.value)
+            const ny = Number(idHeigth.value)
+
+            const containerElem=document.querySelector('#container')
+            createIconEditor(containerElem, nx, ny)
+            // table(containerElem, nx, ny)
+            idWidth.value=''
+            idHeigth.value=''
+        });
+        function createIconEditor(parent,nx,ny){
+            parent.innerHTML=''
+            const inputColorElem=document.createElement('input');
+            inputColorElem.type='color';
+            parent.append(inputColorElem)
+            const tableElem=document.createElement('table')
+            parent.append(tableElem)
+            for(i=0;i<nx;i++){
+                const trElem=document.createElement('tr');
+                tableElem.append(trElem)
+                for(k=0;k<ny;k++){
+                    const tdElem=document.createElement('td');
+                    trElem.append(tdElem)
+                    tdElem.addEventListener('click',e=>{
+                        if(e.target.style.backgroundColor) {
+                            e.target.style.backgroundColor=''
+                        } else {e.target.style.backgroundColor=inputColorElem.value}
+                    })
+                }
+            }
+        }
+
+    //     function abc(){
+    //         trElem.addEventListener('click',e=>{
+    //         [...tableElem.children].forEach(item =>{
+    //             item.className=''
+    //         })
+    //         e.target.className='active';
+    //         const activeElem=document.querySelector('.active')
+            
+    //     //     if(activeElem.style.background){
+    //     //         activeElem.style.background=''
+    //     //     }else{activeElem.style.background = inputColorElem.value}
+    //     // })
+    // })}
+
+
+
+        // function table(parent,nx,ny){
+        //     const tableElem=document.createElement('table')
+        //     for(i=0;i<nx;i++){
+        //         const trElem=document.createElement('tr');
+        //         parent.append(trElem)
+        //         for(k=0;k<ny;k++){
+        //             const tdElem=document.createElement('td');
+        //             parent.append(tdElem)
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+</html>

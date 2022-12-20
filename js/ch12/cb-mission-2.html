@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>cb-mission-2</h1>
+    <script>
+        const arr = [1, 5, 10, 22, 30, 41, 8, 9];
+        var a = arr.map(function(item){
+            if(item%2){// 0은 거짓 1~...은 참
+                return item * 3; 
+            } 
+            return item;
+        })
+        console.log(a+'');
+
+        const arr2 = arr.map(function(itme){
+            return itme % 2 ? itme*3 : itme
+        })
+        console.log(arr2+'');
+    </script>
+</body>
+</html>

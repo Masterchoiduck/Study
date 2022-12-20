@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>if-mission-8.html</h1>
+    <script>
+        // 10자리가 90이상이면 A
+                    // 80이상이면 B
+                    // 70이상이면 c
+                    // 60이상이면 d
+                    // 50이상이면 f
+        // F이상은 1의 자리가 7~9 +
+                    //       4~6 없음
+                    //       0~3 -
+        // 100점은 A+
+        // 60점 미만은 무조건 F
+
+        // 66점은 D
+        // 68점은 D+
+        // 63점은 D-
+        const score = parseInt(prompt())
+
+        if (score === 100) {
+            console.log(`A+`);
+        }
+        let aa = '';
+        if (90<=score) {
+            aa = 'A';
+        } else if (80<=score) {
+            aa = 'B';
+        } else if (70<=score) {
+            aa = 'C';
+        } else if (60<=score) {
+            aa = 'D';
+        } else {
+            console.log(`F`);
+        }
+        if (score>=60) {
+            if (score === 100) {
+                console.log(`${aa}+`)
+            }
+            else if (score%10<=3) {
+                console.log(`${aa}-`);
+            } else if (score%10<=6) {
+                console.log(`${aa}`);
+            } else {
+                console.log(`${aa}+`);
+            }
+        }
+    </script>
+</body>
+</html>

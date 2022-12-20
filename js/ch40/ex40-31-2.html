@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fruits {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #fruits li {width: 100px;; cursor: pointer;}
+        #fruits .active{color: red; text-decoration:underline;}
+
+    </style>
+</head>
+<body>
+    <h1>ex40-31</h1>
+    <ul id="fruits">
+        <li id="apple">Apple</li>
+        <li id="banana">Banana</li>
+        <li id="orange">Orange</li>
+        <li id="strawberry">strawberry</li>
+        <li id="mango">Mango</li>
+    </ul>
+    <div>선택된 내비게이션 아이템 <em class="msg">???</em></div>
+    <script>
+        fruits = document.querySelector('#fruits');
+        msg=document.querySelector('.msg')
+        fruits.addEventListener('click',e=>{
+            [...fruits.children].forEach(item =>{
+                item.classList.toggle('active',item===e.target);
+            })
+            msg.textContent=e.target.id
+        })
+        
+    </script>
+</body>
+</html>

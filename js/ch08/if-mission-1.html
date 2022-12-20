@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>if-mission-1.html</h1>
+    <script>
+        const rNum = parseInt((Math.random()) * 10) + 1;
+        console.log(rNum);
+
+        if (rNum % 2 === 1) {
+            console.log(`${rNum}은 홀수입니다`);   
+        } 
+        else {
+            console.log(`${rNum}은 짝수입니다`);
+        };
+
+        const result = rNum % 2 ? '홀수' : '짝수';
+        console.log(`${rNum}은 ${result}입니다.`)
+    </script>
+</body>
+</html>

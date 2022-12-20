@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>switch</h1>
+    <script>
+        /*
+            switch(값) {
+                case 값1 :
+                    원하는 내용 적는다.
+                    break;
+                case 값2:
+                    원하는 내용 적는다.
+                    원하는 내용 적는다.
+                    원하는 내용 적는다.
+                    break;
+                default:
+                    break;
+            }
+        */
+
+        const val = 3;
+        switch(val) {
+            case 1:
+                console.log('1입니다.');
+                break;
+            case 2:
+                console.log('2입니다.');
+                break;
+            case 5:
+                console.log('5입니다.');
+                break;
+            default:
+                console.log('숫자 없음.');
+                break;
+        }
+        // default 는 if 문 else 느낌
+        // swich문은 break가 없으면 밑에꺼까지 계속 실행 (자바스크립트만 범위지정가능)
+    </script>
+</body>
+</html>

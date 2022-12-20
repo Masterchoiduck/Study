@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>if-mission-4.html</h1>
+    <script>
+        const gender = 'W'; //남자는 'M'
+        const height = 165;
+
+        console.log(gender);
+        console.log(height);
+
+        if (gender === 'W') {
+            if (height > 157) {
+                console.log(`여자 평균키보다 큽니다.`);
+            } else if (height === 157) {
+                console.log(`여자 평균키입니다.`);
+            } else {
+                console.log(`여자 평균키보다 작습니다.`);
+            }
+        } else {
+            if (height > 171) {
+                console.log(`남자 평균키보다 큽니다.`);
+            } else if (height === 171) {
+                console.log(`남자 평균키입니다.`);
+            } else {
+                console.log(`남자 평균키보다 작습니다.`);
+            }
+        }
+    </script>
+</body>
+</html>

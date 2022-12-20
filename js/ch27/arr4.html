@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>arr4</h1>
+    <script>
+        var a = ''
+        const arr = [
+            [100,200,300,400],
+            [500,600,700,800],
+            [900,1000,1100,1200]
+    ];
+    for(i=0;i<arr.length;i++) {
+        console.log(`${i}단`)
+        for(k=0;k<arr[i].length;k++){
+            a += arr[i][k];
+        }
+        console.log(a)
+        console.log(`\n`)
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>arr-mission-3</h1>
+    <script>
+        var a = '-1'
+        const arr = [100, 200, 300, 400, 300, 400, 0, 0, 0 ,0  ,0,0,0,0];
+        const SEARCH_VAL = 0;
+        console.log(arr.indexOf(SEARCH_VAL))
+
+        //indexOf 소스들(원리들)
+
+        for (i=0;i<arr.length;i++) {
+            if (arr[i]===SEARCH_VAL) {
+                a = i
+            }
+        }
+        console.log(a);
+
+        console.log(arr.lastIndexOf(SEARCH_VAL));
+        // 반대로 찾는거 ex) SEARCH_VAL = 3이면 
+                for (i=0;i<arr.length;i++) {
+            if (arr[i]===SEARCH_VAL) {
+                a = i
+                break;
+            }
+        }
+        console.log(a);
+        </script>
+</body>
+</html>

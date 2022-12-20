@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>내가 만든 야구게임</h1>
+    <script>
+        var PC = [0,0,0];
+        for(i=0;i<PC.length;i++) {
+            PC[i] = parseInt(Math.random()*9)+1;
+            for (k=0;k<i;k++) {
+                if (PC[i]===PC[k]) {
+                    i--
+                    break;
+                } 
+            }
+        }
+        console.log(PC+'')
+
+        
+        var level = 0;
+        var PClevel = prompt('컴퓨터 난이도를 입력하세요 \n (상)(중)(하)');
+        for(;;) {
+            if(PClevel==='상') {
+                level=3;
+                break;
+            } else if (PClevel==='중') {
+                level=2;
+                break;
+            } else if (PClevel==='하'){
+                level=1;
+                break;
+            } var PClevel = prompt(`입력하신 난이도는 '${PClevel}'입니다 \n 상,중,하 중 다시입력해주세요`)
+        }
+        console.log(`컴퓨터 난이도 (${PClevel})`)
+
+        
+        var Player = prompt('숫자 세개를 입력해 주세요.');
+        const PlayerArr = Player.split('');
+        const PlayerNumberArr = PlayerArr.map(Number);
+        console.log(`내가 예측한 숫자 ${PlayerNumberArr + ''}`)
+        var S=0
+        var B=0
+        var O=0
+
+        for(var i=0;i<PlayerNumberArr.length;i++) {
+            for(k=0;k<i;k++) {
+            if(PC[i]===PlayerNumberArr[k]) {
+                if(i===k) {
+                    S += 1;
+                } else {
+                    B += 1;
+                }
+            }
+            }
+        }
+        console.log(`스트라이크 : ${S} / 볼 : ${B} / 아웃 : ${PlayerNumberArr.length - (S+B)}`);
+
+        // var PC2 = [0,0,0];
+        // var PC2_map = PC2.map(function(PC2){
+        //     var resut = parseInt(Math.random()*9)+1;
+        //     for(i=0;i<PC2.length;i++){
+        //         for(k=0;k<i;k++) {
+        //             if (PC2_map[i]===PC2_map[k]) {
+        //                 i--
+        //                 break;
+        //             }                     
+        //         }
+        //     }
+        //     console.log('끝');
+        //     return resut;
+        // })
+        // console.log(PC2_map+'')
+        // console.log(PC2_map[2]);
+    </script>
+</body>
+</html>

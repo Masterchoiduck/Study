@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {border-collapse: collapse;}
+        table, td {border:1px solid #333}
+        td {padding: 10px;}
+    </style>
+</head>
+<body>
+    <h1>emission3</h1>
+    <ul id="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>BlueBerry</li>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>BlueBerry</li>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>BlueBerry</li>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>BlueBerry</li>
+    </ul>
+    <script>
+        const fruitsElem = document.querySelector('#fruits');
+        const liElem = document.createElement('li');
+        liElem.appendChild(document.createTextNode('Orange'));
+
+        // fruitsElem.insertBefore(liElem,fruitsElem.firstElementChild.nextElementSibling);
+        fruitsElem.insertBefore(liElem,fruitsElem.children[fruitsElem.children.length-2])
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>fn8</h1>
+    <script>
+        
+        function gugudanMuti(min,max){
+            for(var i=min;i<=max;i++)
+            {
+                gugudan(i)
+            }
+            // gugudan(parseInt(Math.random()*(max-min+1))+min);
+        }
+        
+        
+        function gugudan(dan) {
+            for(var i=1;i<=9;i++) {
+                console.log(`${dan} x ${i} = ${dan*i}`)
+            }
+        }
+
+        gugudanMuti(2,6);
+        </script>
+</body>
+</html>

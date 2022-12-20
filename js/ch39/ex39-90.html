@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px; height: 100px;
+            background-color: antiquewhite;
+        }
+        .red {color:red}
+        .blue {color: blue;}
+    </style>
+</head>
+<body>
+    <h1>ex39-90</h1>
+    <div class="box red">Hello World!</div>
+    <script>
+
+        const divElem=document.querySelector('.box');
+        console.log(divElem.classList)
+        // divElem.classList.replace('red','blue'); //classList.replace('a','b') = a랑 b 교체 
+        // divElem.classList[1] = 'blue' //안됨
+        // divElem.classList.toggle('red'); //classList.toggle('abc') = class에 abc가 있으면 빼줌 없으면 추가 ex) 좋아요 버튼
+        // divElem.classList.add('red') // classList.add = 추가 (기존에 있으면 아무 효과없음)
+        divElem.classList.remove('box') // classList.remove('box') = class에 있는 box 제거 
+        console.log(divElem.classList.item(0)); //classList.item(0) = 0번방에 class 
+        console.log(dicElem.classList.contains('pink')); // classList.contains('a') a가 있으면 true / 없으면 false
+    </script>
+</body>
+</html>

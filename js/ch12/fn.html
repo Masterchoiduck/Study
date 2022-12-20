@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>function</h1>
+    <script>
+        function sum(n1, n2) {
+            // return n1 + n2;
+            const resut = n1 + n2;
+            return resut;
+        }
+        const r1 = sum(10,20); //return함수 보통 연산(누군가와 함께 사용)
+        console.log(r1); //void함수 보통 혼자외롭게 사용
+
+        const r2 = sum(30,40);
+        console.log(r2);
+        /*  
+            함수속에
+            return 이 없으면 void함수(표시안됨) → 내가다알아서할께...?함수에 자주사용
+            return 이 있으면 return함수(표시가능) → 2차가공이 필요한함수에 자주사용
+        */
+    </script>
+</body>
+</html>

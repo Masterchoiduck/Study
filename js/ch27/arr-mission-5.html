@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>arr-mission-5</h1>
+    <script>
+        const stuNames = ['철수','영희','영수','순이'];
+        const myScores = [0, 0, 0, 0];
+        const subject = [0, 0, 0];
+        const sub = ['국어', '영어', '수학'];
+        const stuScores = [
+            [100,   90,     80], //철수점수 (국어, 영어, 수학)
+            [100,   100,    100], // 영희 점수
+            [50,    60,     30], //영수 점수
+            [90,    70,     20] //순희 점수
+        ];
+
+        //각 학생의 합계 점수를 출력해주세요
+        //철수 : 270점
+        //영희 : 300점
+        //영수 : 140점
+
+
+        
+        //미션3
+        
+        for(i=0;i<stuNames.length;i++) {
+            for(k=0;k<stuScores[i].length;k++) {
+                myScores[i] += stuScores[i][k];
+                subject[k] += stuScores[i][k];
+            }
+        }
+        for(i=0;i<stuNames.length;i++) {
+            a = parseInt( `${myScores[i] / stuScores[i].length}` )
+            console.log(`${stuNames[i]} : ${myScores[i]}점, ${a}`)
+        }
+        for(i=0;i<subject.length;i++) {
+            a = parseInt( `${subject[i] / stuNames.length}` )
+            console.log(`${sub[i]} 합계 점수 : ${subject[i]}, 평균 ${a}`)
+        }
+
+        
+        // }
+        // 미션1
+            // for(i=0;i<stuScores.length;i++) {
+            //     var a = 0
+            //     var b = ''
+            //     for(z=0;z<stuNames[i].length;z++)
+            //     {
+            //         b = stuNames[i];
+            //     }
+            //     for(k=0;k<stuScores[i].length;k++) {
+            //         a += stuScores[i][k];
+            //     }
+            //     console.log(`${b} : ${a}점`);
+            // }
+        
+            // for(i=0;i<stuScores.length;i++) {
+            //     var a = 0
+            //     for(k=0;k<stuScores[i].length;k++) {
+            //         a += stuScores[i][k];
+            //     }
+            //     console.log(`${stuNames[i]} : ${a}점`);
+            // }
+        
+            // for(i=0;i<stuNames.length;i++) {
+            //     for(k=0;k<stuScores[i].length;k++) {
+            //         myScores[i] += stuScores[i][k];
+            //     }
+            // }
+            // for(i=0;i<stuNames.length;i++) {
+            //     console.log(`${stuNames[i]} : ${myScores[i]}점`)
+            // }
+            
+        //미션2
+        
+            // for(i=0;i<stuNames.length;i++) {
+            //     for(k=0;k<stuScores[i].length;k++) {
+            //         myScores[i] += stuScores[i][k];
+            //     }
+            // }
+            // for(i=0;i<stuNames.length;i++) {
+            //     a = parseInt( `${myScores[i] / stuScores[i].length}` )
+            //     console.log(`${stuNames[i]} : ${myScores[i]}점, ${a} `)
+            // }
+        
+        </script>
+</body>
+</html>

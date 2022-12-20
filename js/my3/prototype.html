@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>prototype</h1>
+    <script>
+        function Human(name, age) {
+            this.name=name;
+            this.age=age;
+            this.whoAmI=function(){
+                console.log(`나는 ${this.name}이고, ${this.age}살 입니다.`);
+            }
+        }
+
+        //메소드 추가할때
+
+        Human.prototype.driving=function(car){
+            console.log(`나는 ${this.name}일껄?${this.age}${car}`);
+        }
+        //new=객체화
+        
+        const h1=new Human('신사임당', 20)
+        h1.whoAmI()
+        h1.driving('소나타')
+        console.log(h1.aa);
+
+        h1.name='홍길동';
+        h1.whoAmI();
+
+        const h2 = new Human('세바스찬',32);
+        h2.whoAmI();
+        h2.driving('밴츠');
+
+        var now = new Date();   //현재시간
+        var year = now.getFullYear();
+
+        var month = now.getMonth()+1;
+
+        var month1 =month.toString().padStart(2,'0');
+        // if((month+"").length < 2){
+        //     month="0"+month;
+        // }
+
+        var date = now.getDate(); 
+        if((date+"").length < 2){
+            date="0"+date;      
+        }
+
+        var hour = now.getHours();
+        if((hour+"").length < 2){
+        hour="0"+hour;      
+        }
+
+        var minutes=now.getMinutes();
+        if((minutes+"").length < 2){
+            minutes="0"+minutes;
+        }
+
+        var today = year + "" + month + "" + date+ "" +hour+ "" +minutes;
+        console.log(today);
+    </script>
+</body>
+</html>

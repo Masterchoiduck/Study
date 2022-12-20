@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/common.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <h1 class="logo">BoxOffice</h1>
+            <nav class="nav">
+                <div class="nav__wrap">
+                    <div class="nav__container">
+                        <strong class="nav__title">MENU</strong>
+                        <div class="nav__list">
+                            <div class="nav__item">
+                                <a href="searchDailyBoxOfficeList.html" class="nav__link">일별</a>
+                            </div>
+                            <div class="nav__item">
+                                <a href="searchWeeklyBoxOfficeList1.html" class="nav__link">주간</a>
+                            </div>
+                            <div class="nav__item">
+                                <a href="searchWeeklyBoxOfficeList2.html" class="nav__link">주말</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <h1>주간 박스오피스</h1>
+            <div>
+                <form id="searchFrm">
+                    <div>
+                        날짜: <input type="date" name="targetDt">
+                        <!-- <input type="button" value="검색"> -->
+                        <button type="button" name="search">검색</button>
+                    </div>
+                </form>
+            </div>
+            <div id="contents">
+            </div>
+        </div>
+    </div>
+    <script src="./js/searchDailyBoxOfficeList.js"></script>
+
+</body>
+</html>

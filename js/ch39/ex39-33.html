@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ex39-32</h1>
+    <ul id="fruits">
+        <li class="apple">사과</li>
+        <li class="banana">바나나</li>
+        <li class="orange">오렌지</li>
+    </ul>
+    <script>
+        const appleElem = document.querySelector('.apple');
+        console.log(appleElem.nextSibling);
+        console.log(appleElem.nextElementSibling); //다음
+
+        console.log(appleElem.nextElementSibling.nextElementSibling);
+
+        const bananaElem = document.querySelector('.banana');
+        console.log(bananaElem.previousElementSibling); //전
+
+    </script>
+</body>
+</html>

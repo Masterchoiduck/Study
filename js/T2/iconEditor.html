@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {border-collapse: collapse;}
+        table,td{border: 1px solid #ccc;}
+        td{padding: 15px;}
+    </style>
+</head>
+<body>
+    <h1>iconEditor</h1>
+    <div>
+        가로: <input type="number" id="id_width">
+        세로: <input type="number" id="id_height">
+        <input type="button" id="id_create" value="테이블 생성">
+    </div>
+    <div id="container"></div>
+    <script>
+        const idWidth=document.querySelector('#id_width');
+        const idHeigth=document.querySelector('#id_height');
+        const idCreate=document.querySelector('#id_create');
+        idCreate.addEventListener('click',()=> {
+            const nx = Number(idWidth.value)
+            const ny = Number(idHeigth.value)
+
+            const containerElem=document.querySelector('#container')
+            createIconEditor(containerElem, nx, ny)
+        });
+        function createIconEditor(parent,nx,ny){
+            const inputColorElem=document.createElement('input');
+            inputColorElem.type='color';
+
+            parent.append(inputColorElem)
+        }
+
+    </script>
+</body>
+</html>

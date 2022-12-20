@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ToDo-List2</h1>
+    <input type="text" placeholder="할 일">
+
+    <button>등록</button>
+    <ul></ul>
+    <script>
+        const inputElem = document.querySelector('input');
+        const buttonElem=document.querySelector('button');
+        const ulElem=document.querySelector('ul')
+        
+        function fcn(){
+            const liElem = document.createElement('li')
+            const chElem = document.createElement('input')
+            chElem.setAttribute('type',"checkbox")
+            liElem.innerText = inputElem.value
+            ulElem.prepend(chElem);
+            ulElem.prepend(liElem);
+            inputElem.value='';
+        }
+        checked
+        if(chElem)
+        
+        inputElem.addEventListener('keyup', e=>{
+            if(e.key!=='Enter'){return;}
+            fcn()
+        })
+        
+        buttonElem.addEventListener('click', fcn)
+
+    </script>
+</body>
+</html>

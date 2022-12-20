@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>arr-mission-4</h1>
+    <script>
+        var a = '-1'
+        const arr = [100, 200, 300, 400, 300, 400, 300, 300];
+        const SEARCH_VAL = 300;
+
+            for (i=arr.length-1;i>=0;i--) {
+            if (arr[i]===SEARCH_VAL) {
+                a = i
+                break;
+            }
+        }
+        console.log(a);
+        </script>
+</body>
+</html>

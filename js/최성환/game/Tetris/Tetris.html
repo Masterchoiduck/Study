@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin-left:auto; 
+            margin-right:auto;
+        }
+        table {border-collapse: collapse;}
+        table,td{border: 1px solid #ccc;}
+        td{padding: 20px;}
+    </style>
+</head>
+<body>
+    <h1>GAME</h1>
+    <h3>
+        <form action="" id="Frm">
+            <label for=""><input type="radio" name="game" value="Te">테트리스</label>
+            <label for=""><input type="radio" name="game" value="music">리듬게임</label>
+            <label for=""><input type="radio" name="game" value="img">이미지</label>
+            <div><input type="button" name="ok" value="확인"> <input type="button" name="m" value="메뉴"></div>
+        </form>
+    </h3>
+    <form action="" id="TFrm">
+        <table id="table">
+        </table>
+        <h1 id="option"></h1>
+    </form>
+    <script src="js/Tetris.js"></script>
+</body>
+</html>
