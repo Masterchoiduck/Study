@@ -9,31 +9,13 @@
 </head>
 <body>
     <div id="container">
-        <div class="header">
-            <h1 class="logo">BoxOffice</h1>
-            <nav class="nav">
-                <div class="nav__wrap">
-                    <div class="nav__container">
-                        <strong class="nav__title">MENU</strong>
-                        <div class="nav__list">
-                            <div class="nav__item">
-                                <a href="searchDailyBoxOfficeList.html" class="nav__link">일별</a>
-                            </div>
-                            <div class="nav__item">
-                                <a href="searchWeeklyBoxOfficeList1.html" class="nav__link">주간</a>
-                            </div>
-                            <div class="nav__item">
-                                <a href="searchWeeklyBoxOfficeList2.html" class="nav__link">주말</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
-        </div>
+
         <div class="main">
+
             <h1>일별 박스오피스</h1>
+
             <div>
+
                 <form id="searchFrm">
                     <div>
                         날짜: <input type="date" name="targetDt">
@@ -52,6 +34,7 @@
     <div id="loading" class="child_center display_none">
         <img src="img/loading.gif" alt="loading">
     </div>
+    <script src="./js/common.js"></script>
     <script src="./js/searchDailyBoxOfficeList.js"></script>
 
 </body>
