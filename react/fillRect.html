@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang ="ko">
+<head>
+	<title>HTML5 canvas - fillRect() 함수로 사각형 그리기 </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#myCanvas {border:1px solid red;}
+	</style>
+	
+	<script type="text/javascript">		
+		function rect(){
+			//canvas요소에 대한 Context 개체 가져오기
+			
+			//var canvas = document.getElementById('myCanvas');
+			//var ctx = canvas.getContext('2d');
+
+			var ctx = document.getElementById('myCanvas').getContext('2d');
+
+			if(!ctx) {
+				return;
+			}
+			//사각형 그리기
+			ctx.fillStyle = "red"; //"rgb(255,0,0)";
+
+			ctx.strokeRect(10,10,200, 200); //strokeRect(x,y,width,height) ; 테두리만 있는 사각형을 그림
+
+			ctx.fillRect(220,10,200, 200); 
+			//fillRect(x,y,width,height) ; 색이 채워진 사각형을 그림
+
+			ctx.fillRect(430,10,200, 200); 
+			
+			ctx.clearRect(500,50,100,100);
+			//clearRect(x,y,width,height) ; 특정영역을 지움
+
+		}
+
+	</script>
+</head>
+<body onload="rect();">
+	<!-- 그림영역 지정 -->
+	<canvas id="myCanvas" width="640" height="480">
+		당신의 브라우저는 canvas 요소를 지원하지 않습니다.
+	</canvas>
+</body>
+</html>
