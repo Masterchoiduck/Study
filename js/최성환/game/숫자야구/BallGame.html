@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/BallGame.css">
+</head>
+
+<body>
+    <!-- <h1>내가 만든 야구게임</h1> -->
+    <!-- <button>Show modal</button>
+    <dialog>
+        Hello! I'm a modal!
+        <form method="dialog">
+            <button>close</button>
+        </form>
+    </dialog> --> 
+    <dialog>
+        <div>숫자 갯수를 입력해주세요</div>
+        <input type="radio" name="1" class="radio" checked value="3"> 3개
+        <input type="radio" name="1" class="radio" value="4"> 4개
+        <input type="radio" name="1" class="radio" value="5"> 5개
+        <input type="radio" name="1" class="radio" value="6"> 6개
+        <input type="radio" name="1" class="radio" value="7"> 7개
+        <div class="center">
+            <form method="dialog">
+                <button class="ok">확인</button>
+            </form>
+        </div>
+    </dialog>
+    <div class="game_box">
+        <div class="inner">
+            <div class="mobile-container">
+                <div class="game d-flex flex-column">
+                    <h1 class="my-3">숫자 야구 게임</h1>
+                    <!-- 입력한 숫자표시 -->
+                    <div class="answer">
+                    <!-- 
+                        <div class="answer-item"></div>
+                        <div class="answer-item"></div>
+                        <div class="answer-item"></div>
+                        <div class="answer-item"></div>
+                         -->
+                    </div>
+                    <div class="result my-3 flex-fill">
+                        <!-- 비교하는거 -->
+                        <!-- <div class="result-item">
+                            <div>
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                            </div>
+                            <div>
+                                <span class="B item-1">B</span>
+                                <span class="B item-2">B</span>
+                                <span class="OUT item-3">OUT</span>
+                            </div>
+                        </div>
+
+                        <div class="result-item">
+                            <div>
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                            </div>
+                            <div>
+                                <span class="B item-1">B</span>
+                                <span class="S item-2">S</span>
+                                <span class="OUT item-3">OUT</span>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <!-- 버튼입력 -->
+                    <div class="numbers">
+                        <button type="button" class="btn-back btn btn-danger">←</button>
+                        <div class="numbers-grid">
+                            <button type="button" class="btn btn-primary">0</button>
+                            <button type="button" class="btn btn-primary">1</button>
+                            <button type="button" class="btn btn-primary">2</button>
+                            <button type="button" class="btn btn-primary">3</button>
+                            <button type="button" class="btn btn-primary">4</button>
+                            <button type="button" class="btn btn-primary">5</button>
+                            <button type="button" class="btn btn-primary">6</button>
+                            <button type="button" class="btn btn-primary">7</button>
+                            <button type="button" class="btn btn-primary">8</button>
+                            <button type="button" class="btn btn-primary">9</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/BallGame.js"></script>
+    <script>
+        
+    </script>
+</body>
+
+</html>
