@@ -46,7 +46,42 @@ function list(data){
 }
 
 
+
+
+// 입력된 값저장 함수
+
+console.log($selectCity.innerText);
+const $input = document.querySelectorAll('input')
+const $label = document.querySelectorAll('label')
+$input.forEach((item,inx)=>{
+    // console.log(item);
+    item.addEventListener('click',e=>{
+        $label.forEach((item2,inx2)=>{
+            if(inx===inx2){
+                console.log(item2.textContent);
+            }
+        })
+        if(inx===0){
+            // console.log($selectCity.textContent);
+        }
+        if(inx===1){
+            // console.log($selectCity.innerText);
+        }
+        if(inx===2){
+            console.log();
+        }
+        if(inx===3){
+            console.log();
+        }
+    })
+})
+
+
+
+
+
 // fetch이후 저장된 함수 실행
+
 function dataList(data){
     // 위치
     Fcountry_lc(data)
@@ -54,8 +89,6 @@ function dataList(data){
     Flang_nm(data)
     // 국가
     FCountry(data)
-    // 도시
-    // Fmain_city(data)
 }
 
 
@@ -65,11 +98,11 @@ function dataList(data){
 // 위치
 function Fcountry_lc(data){
     // console.log(data);
-    let country_lc = '<option value="">-- 위치 선택 --</option>'
+    let country_lc = '<option value="" selected="selected">-- 위치 선택 --</option>'
     data.forEach((item,index)=>{
         if(!item.country_lc){return}
         country_lc+=`
-        <option value="${item.country_iso_alp2}" selected="selected">${item.country_lc}</option>
+        <option value="${item.country_iso_alp2}">${item.country_lc}</option>
         `
     })
     // console.log(country_lc);
@@ -79,11 +112,11 @@ function Fcountry_lc(data){
 // 언어
 function Flang_nm(data){
     // console.log(data);
-    let select_lang_nm = '<option value="">-- 언어 선택 --</option>'
+    let select_lang_nm = '<option value="" selected="selected">-- 언어 선택 --</option>'
     data.forEach((item,index)=>{
         if(!item.lang_nm){return}
         select_lang_nm+=`
-        <option value="${item.country_iso_alp2}" selected="selected">${item.lang_nm}</option>
+        <option value="${item.country_iso_alp2}">${item.lang_nm}</option>
         `
     })
     // console.log(select_lang_nm);
@@ -93,18 +126,17 @@ function Flang_nm(data){
 // 국가
 function FCountry(data){
     // console.log(data);
-    let selectCountry = '<option value="">-- 언어 선택 --</option>'
+    let selectCountry = '<option value="" selected="selected">-- 언어 선택 --</option>'
     data.forEach((item,index)=>{
         if(!item.country_nm){return}
         selectCountry+=`
-        <option value="${item.country_iso_alp2}" selected="selected">${item.country_nm}</option>
+        <option value="${item.country_iso_alp2}">${item.country_nm}</option>
         `
         Fmain_city(item)
     })
     // console.log(selectCountry);
     $selectCountry.innerHTML=selectCountry
 }
-
 
 // 도시 main_city_cn
 function Fmain_city(item){
@@ -116,16 +148,17 @@ function Fmain_city(item){
 
     CitySave = test.split('(',1)
     CitySave[0] += '(수도)'
-
-    test2+=item.main_city_cn
-
-    CitySave1 = test2.split(',')
-    CitySave.push(...CitySave1)
+    if(!item.main_city_cn){
+        test2='null'
+    } else {
+        test2+=item.main_city_cn
+        CitySave1 = test2.split(',')
+        CitySave.push(...CitySave1)
+    }
     
-    console.log(CitySave);
-    // CitySave=[]
-    // CitySave.push(item.country_cptl_nm)
-    // CitySave.push(item.main_city_cn)
+    // console.log(CitySave);
+
+
     let main_city_cn = '<option value="" selected="selected">-- 도시 선택 --</option>'
     CitySave.forEach(item=>{
         main_city_cn+=`
