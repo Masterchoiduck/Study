@@ -1,0 +1,784 @@
+$orange: #ff9624;$orangeL: #ffe0ae;$orangeD: #FE8427;
+$blue: #66afd8;$blueL: #cce7ff;$blueD: #4B99BC;
+$green: #13ba66;$greenL: #bbefab;$greenD: #10A055;
+$red: #fc3232;$redL: #ffd3b6;$redD: #E81C1C;
+$water: #f0f9fc;
+* {
+  margin: 0;
+  padding: 0;
+  background-color: $water;
+}
+$main-size: 300px;
+.water {
+  position: relative;
+  margin: 2em auto;
+  width: $main-size*2;
+  height: $main-size*2;
+}
+.orange,
+.green,
+.red,
+.blue{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $main-size;
+  height: $main-size;
+}
+.orange {animation-name: bobble-up-orange ;}
+.green {animation-name: bobble-up-green ;}
+.blue {animation-name: bobble-up-blue ;}
+.red {animation-name: bobble-up-red ;}
+// head
+$head-size-w: 150px;
+$head-size-h: 110px;
+$head-radius: 15em 15em 3em 3em;
+.head {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  height: $head-size-h;
+  width: $head-size-w;
+  background-color: black;
+  border-radius: $head-radius;
+  
+}
+.orange > .head { background-color: $orange; }
+.blue > .head { background-color: $blue; }
+.green > .head { background-color: $green; }
+.red > .head { background-color: $red; }
+// backhead
+$diff: 17px;
+$white-trans: rgba(255, 255, 255, 0.6);
+$backhead-radius: 15em 15em 0em 0em;
+.backhead {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  height: $head-size-h + $diff;
+  width: $head-size-w + $diff;
+  background-color: black;
+  border-radius: $backhead-radius;
+  &:before {
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: $head-size-h;
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    width: $diff * 1.5;
+    height: $diff * 2;
+    border-radius: 0 0 5em 5em;
+    box-shadow: 
+      71px 0 0 black, -71px 0 0 black, 
+      43px 0 0 black, -43px 0 0 black, 
+      16px 0 0 black, -16px 0 0 black;
+  }
+  &:after {
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: $head-size-h + $diff;
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    width: $diff / 3;
+    height: $diff;
+    border-radius: 5em;
+    box-shadow: 
+      57px 0 0 $water, -57px 0 0 $water, 
+      30px 0 0 $water, -30px 0 0 $water;
+  }
+}
+.orange > .backhead {
+  background-color: $orangeL;
+  &:before {
+    background-color: $orangeL;
+    box-shadow: 
+      71px 0 0 $orangeL, -71px 0 0 $orangeL, 
+      43px 0 0 $orangeL, -43px 0 0 $orangeL, 
+      16px 0 0 $orangeL, -16px 0 0 $orangeL;
+  }
+}
+.blue > .backhead {
+  background-color: $blueL;
+  &:before {
+    background-color: $blueL;
+    box-shadow: 
+      71px 0 0 $blueL, -71px 0 0 $blueL, 
+      43px 0 0 $blueL, -43px 0 0 $blueL, 
+      16px 0 0 $blueL, -16px 0 0 $blueL;
+  }
+}
+.green > .backhead {
+  background-color: $greenL;
+  &:before {
+    background-color: $greenL;
+    box-shadow: 
+      71px 0 0 $greenL, -71px 0 0 $greenL, 
+      43px 0 0 $greenL, -43px 0 0 $greenL, 
+      16px 0 0 $greenL, -16px 0 0 $greenL;
+  }
+}
+.red > .backhead {
+  background-color: $redL;
+  &:before {
+    background-color: $redL;
+    box-shadow: 
+      71px 0 0 $redL, -71px 0 0 $redL, 
+      43px 0 0 $redL, -43px 0 0 $redL, 
+      16px 0 0 $redL, -16px 0 0 $redL;
+  }
+}
+// legs
+$legs-w: 22px;
+$legs-h: 100px;
+.legs {
+  top: 65%;
+  left: 50%;
+  position: absolute;
+  height: $legs-h;
+  width: $legs-w;
+  background-color: black;
+  border-radius: 0 0 5em 5em;
+  animation-name: bobble-down;
+  &:after{
+    content: '';
+    position: absolute;
+    height: $legs-h;
+    width: $legs-w;
+    background-color: transparent;
+    border-radius: 0 0 5em 5em;
+    top: 20px;
+    box-shadow: 0 -20px 0 black;
+  }
+}
+.orange > .legs {
+  background-color: $orange;
+  &:after {box-shadow: 0 -20px 0 $orangeD;}
+}
+.blue > .legs {
+  background-color: $blue;
+  &:after {box-shadow: 0 -20px 0 $blueD;}
+}
+.green > .legs {
+  background-color: $green;
+  &:after {box-shadow: 0 -20px 0 $greenD;}
+}
+.red > .legs {
+  background-color: $red;
+  &:after {box-shadow: 0 -20px 0 $redD;}
+}
+// curved legs
+.curvy{
+  top: -50px;
+  position:absolute;
+  width: $legs-w;
+  height: 80px;
+  background-color: transparent;
+  left: 40px;
+  border: solid $legs-w black;
+  border-radius: 0 0 5em 5em;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  animation-name: remove-scale;
+  &:before{
+    content:'';
+    position:absolute;
+    width: $legs-w;
+    height: 80px;
+    top: -22px;
+    background-color: transparent;
+    left: -146px;
+    border: solid $legs-w black;
+    border-radius: 0 0 5em 5em;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+  &:after{
+    z-index: 1;
+    content:'';
+    position: absolute;
+    top: 72px;
+    left: 17px;
+    width: $legs-w;
+    height: $legs-w;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: -158px 0 0 black;
+  }
+}
+.orange > .legs > .curvy{
+  border: solid $legs-w $orangeD;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  &:before{
+    border: solid $legs-w $orangeD;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+  &:after{
+    background-color: $orangeD;
+    box-shadow: -158px 0 0 $orangeD;
+  }
+}
+.blue > .legs > .curvy{
+  border: solid $legs-w $blueD;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  &:before{
+    border: solid $legs-w $blueD;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+  &:after{
+    background-color: $blueD;
+    box-shadow: -158px 0 0 $blueD;
+  }
+}
+.green > .legs > .curvy{
+  border: solid $legs-w $greenD;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  &:before{
+    border: solid $legs-w $greenD;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+  &:after{
+    background-color: $greenD;
+    box-shadow: -158px 0 0 $greenD;
+  }
+}
+.red > .legs > .curvy{
+  border: solid $legs-w $redD;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  &:before{
+    border: solid $legs-w $redD;
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+  &:after{
+    background-color: $redD;
+    box-shadow: -158px 0 0 $redD;
+  }
+}
+// faces
+$eyes: 20px;
+$diffE: 5px;
+.orange > .head > .eyesL{
+  position: absolute;
+  border: solid 3px white;
+  width: $eyes;
+  height: $eyes;
+  border-radius: 50%;
+  background-color: $greenD;
+  top: 32px;
+  left: 35px;
+  &:before{
+    content:'';
+    position: absolute;
+    width: $eyes - $diffE;
+    height: $eyes - $diffE;
+    border-radius: 50%;
+    background-color: black;
+    top: 3px;
+    left: 3px;
+  }
+  &:after{
+    content:'';
+    position: absolute;
+    width: $eyes - $diffE - 8px;
+    height: $eyes - $diffE - 8px;
+    border-radius: 50%;
+    background-color: white;
+    top: 10px;
+    left: 12px;
+  }
+}
+.orange > .head > .eyesR{
+  position: absolute;
+  border: solid 3px white;
+  width: $eyes;
+  height: $eyes;
+  border-radius: 50%;
+  background-color: $greenD;
+  top: 32px;
+  left: 85px;
+  &:before{
+    content:'';
+    position: absolute;
+    width: $eyes - $diffE;
+    height: $eyes - $diffE;
+    border-radius: 50%;
+    background-color: black;
+    top: 3px;
+    left: 3px;
+  }
+  &:after{
+    content:'';
+    position: absolute;
+    width: $eyes - $diffE - 7px;
+    height: $eyes - $diffE - 7px;
+    border-radius: 50%;
+    background-color: white;
+    top: 10px;
+    left: 12px;
+  }
+}
+.blue > .head > .eyes{
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  border: solid 5px rgba(0,0,0,0.5);
+  background-color: transparent;
+  border-radius: 0 5em 5em 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  top: 35px;
+  left: 30px;
+  &:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    border: solid 5px rgba(0,0,0,0.5);
+    background-color: transparent;
+    border-radius: 5em 0 0 5em;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    top: -5px;
+    left: 50px;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: $legs-w - 5px;
+    background-color: white;
+    top: 20px;
+    box-shadow: 58px 0 0 white;
+  }
+}
+.green > .head > .eyes{
+  position: absolute;
+  $eyes: 20px;
+  $width: 5px;
+  width: $eyes;
+  height: $eyes/2;
+  border: solid $width black;
+  background-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 5em 5em 0 0;
+  top: 35px;
+  left: 30px;
+  &:after{
+    content: '';
+    position: absolute;
+    width: $eyes;
+    height: $eyes/2;
+    border: solid $width black;
+    background-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 5em 5em 0 0;
+    top: -5px;
+    left: 60px;
+  }
+  &:before{
+    // content:'';
+    position: absolute;
+    width: $width;
+    height: $width;
+    background-color:black;
+    border-radius: 50%;
+    top: 10px;
+    left: -5px;
+    box-shadow: 25px 0 0 black,
+      65px 0 0 black,
+      90px 0 0 black
+  }
+}
+.red > .head > .eyesL{
+  position: absolute;
+  border: solid 3px white;
+  width: $eyes;
+  height: $eyes;
+  border-radius: 50%;
+  background-color: $redD;
+  top: 32px;
+  left: 35px;
+  &:before{
+    content:'';
+    position: absolute;
+    width: $eyes - $diffE;
+    height: $eyes - $diffE;
+    border-radius: 50%;
+    background-color: black;
+    top: 3px;
+    left: 3px;
+  }
+  &:after{
+    content:'';
+    position: absolute;
+    width: $eyes - $diffE - 8px;
+    height: $eyes - $diffE - 8px;
+    border-radius: 50%;
+    background-color: white;
+    top: 10px;
+    left: 12px;
+  }
+}
+.red > .head > .eyesR{
+  position: absolute;
+  border: solid 3px white;
+  width: $eyes;
+  height: $eyes;
+  border-radius: 50%;
+  background-color: $redD;
+  top: 32px;
+  left: 85px;
+  &:before{
+    content:'';
+    position: absolute;
+    width: $eyes - $diffE;
+    height: $eyes - $diffE;
+    border-radius: 50%;
+    background-color: black;
+    top: 3px;
+    left: 3px;
+  }
+  &:after{
+    content:'';
+    position: absolute;
+    width: $eyes - $diffE - 7px;
+    height: $eyes - $diffE - 7px;
+    border-radius: 50%;
+    background-color: white;
+    top: 10px;
+    left: 2px;
+  }
+}
+//mouth
+$blush: #F75F29;
+.orange > .head > .mouth{
+  position: absolute;
+  background-color: transparent;
+  width: 12px;
+  height: 6px;
+  border-radius: 0 0 5em 5em;
+  border: solid 4px $blush;
+  border-top-color: transparent;
+  top: 65px;
+  left: 65px;
+}
+.blue > .head > .mouth{
+  position: absolute;
+  width: 22px;
+  height: 12px;
+  border-radius: 15em 15em 5em 5em;
+  background-color: black;
+  top: 70px;
+  left: 64px;
+}
+.green > .head > .mouth{
+  z-index: 1;
+  position: absolute;
+  width: 25px;
+  height: 15px;
+  background-color: black;
+  border-radius: 2em 2em 8em 8em;
+  top: 65px;
+  left: 65px;
+}
+.red > .head > .mouth{
+  position: absolute;
+  width: 50px;
+  height: 17px;
+  background-color: black;
+  border-radius: 5em;
+  top: 70px;
+  left: 48px;
+  &:after{
+    content: '';
+    position: absolute;
+    // teeth
+    background-color: white;
+    width: 5px;
+    height: 6px;
+    left: 10px;
+    border-radius: 0 0 5em 5em;
+    box-shadow: 25px 0 0 white;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 6px;
+    background-color: $red;
+    border-radius: 5em 5em 0 0;
+    left: 18px;
+    top: 7px;
+  }
+}
+//symbol
+.orange > .symbol{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  // border: solid 10px black;
+  left: 10px;
+  overflow: hidden;
+  &:before{
+    position: absolute;
+    content: '';
+    border: solid 30px transparent;
+    border-right-color: $orange;
+    transform: rotate(-45deg);
+    top: 15px;
+    left: -25px;
+  }
+  &:after{
+    position: absolute;
+    content: '';
+    border: solid 10px transparent;
+    border-left-color: $orange;
+    transform: rotate(-45deg);
+    top: 5px;
+    left: 38px;
+  }
+}
+.blue > .symbol{
+  position: absolute;
+  background-color: $blue;
+  width: 30px;
+  height: 30px;
+  border-radius: 100% 0 55% 40% / 55% 0 100% 40%;
+  transform: rotate(-45deg);
+  top: 25px;
+  left: 230px;
+}
+.green > .symbol{
+  position:absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $green;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 13px;
+    height: 13px;
+    background-color: $green;
+    border-radius: 50%;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 37px;
+    background-color: white;
+    border-radius: 5em;
+    width: 4px;
+    height: 15px;
+    transform: rotate(60deg);
+  }
+}
+.green > .symbol > .fish {
+  position:absolute;
+  background-color: white;
+  height: 25px;
+  width: 25px;
+  border-radius: 75% 10%;
+  transform: rotate(45deg);
+  top: 12px;
+  left: 11px;
+  &:after{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 23px;
+    background-color: white;
+    border-radius: 5em;
+    width: 4px;
+    height: 15px;
+    transform: rotate(-105deg);
+    
+  }
+  &:before{
+    transform: rotate(-45deg);
+    position:absolute;
+    content: '';
+    background-color:$green;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    top: 15px;
+    left: 5px;
+  }
+}
+.red > .symbol{
+  $size: 12px;
+  position: absolute;
+  width: $size;
+  height: $size;
+  border: solid 5px transparent;
+  border-radius: 5em;
+  border-bottom-color: $red;
+  border-left-color: $red;
+  left: 230px;
+  top: 10px;
+  &:before{
+    content: '';
+    position: absolute;
+    width: $size;
+    height: $size;
+    border: solid 5px transparent;
+    border-radius: 5em;
+    border-bottom-color: $red;
+    border-right-color: $red;
+    left: -30px;
+    top: -5px;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    width: $size;
+    height: $size;
+    border: solid 5px transparent;
+    border-radius: 5em;
+    border-top-color: $red;
+    border-left-color: $red;
+    transform: rotate(45deg);
+    top: 16px;
+    left: -17px;
+  }
+}
+// others
+.orange > .head >.blush{
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  background-color: $blush;
+  border-radius: 50%;
+  top: 60px;
+  left: 20px;
+  box-shadow: 85px 0 0 $blush,
+    17px -8px 0 $orange,
+    69px -8px 0 $orange;
+}
+.blue > .head >.spots{
+  position: absolute;
+  background-color: $blueL;
+  width: 10px;
+  height: 6px;
+  border-radius: 50%;
+  left: 68px;
+  top: 5px;
+  &:after{
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    width: 12px;
+    height: 8px;
+    border-radius: 50%;
+    top: 5px;
+    box-shadow: 13px 0 0 $blueL,
+      -15px 0 0 $blueL;
+  }
+}
+.green > .head >.drool{
+  position: absolute;
+  width: 10px;
+  height: 25px;
+  background-color: white;
+  top: 73px;
+  left: 68px;
+  border-radius: 5em;
+  &:after{
+    content:'';
+    position: absolute;
+    width: 10px;
+    height: 25px;
+    background-color: white;
+    top: -7px;
+    left: 8px;
+    border-radius: 5em;
+  }
+}
+.red > .head >.brows{
+  position:absolute;
+  $browW: 40px;
+  $browH: 12px;
+  width: $browW;
+  height:$browH;
+  background-color:black;
+  border-radius: 5em;
+  transform: rotate(15deg);
+  top: 30px;
+  left: 30px;
+  &:after{
+    content:'';
+    position:absolute;
+    width: $browW;
+    height:$browH;
+    background-color:black;
+    border-radius: 5em;
+    transform: rotate(-30deg);
+    left: 45px;
+    top: -13px;
+  }
+}
+.orange,
+.green,
+.red,
+.blue,
+.legs,
+.curvy{
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes bobble-up-orange{
+0%, 100%{transform: translate(-100%, -100%) translateY(0);}
+  50% {transform: translate(-100%, -100%) translateY(-20px);}
+}
+@keyframes bobble-up-green{
+0%, 100%{transform: translate(-100%, 0) translateY(-20px);}
+  50% {transform: translate(-100%, 0) translateY(0px);}
+}
+@keyframes bobble-up-blue{
+0%, 100%{transform: translate(0, -100%) translateY(-20px);}
+  50% {transform: translate(0, -100%) translateY(0px);}
+}
+@keyframes bobble-up-red{
+0%, 100%{transform: translate(0, 0) translateY(0);}
+  50% {transform: translate(0, 0) translateY(-20px);}
+}
+@keyframes bobble-down {
+  0%, 100%
+    {transform: translate(-50%, -50%) scaleY(1);}
+  50%
+    {transform: translate(-50%, -60%) scaleY(0.8);}
+}
+@keyframes remove-scale {
+  0%, 100%
+    {transform: scaleY(1);}
+  50%
+    {transform: scaleY(1.2);}
+}
+
+.dribbble-icon {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  cursor: pointer;
+  &:hover{
+    transition-duration: 1s;
+    transform: scale(1.2);
+  }
+}

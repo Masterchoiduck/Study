@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="날씨.css">
+</head>
+
+<body>
+    <div class="cont-wrap">
+        <form id="default-form" class="cmp-form" action="world-weather.do" method="get" autocomplete="off">
+
+            <!-- 위치 -->
+            <div class="cmp-form-row">
+                <div class="cmp-form-select label-on">
+                    <label for="select-country_lc">위치</label>
+                    <div class="select">
+                        <select id="select-country_lc" name="cityCode">
+                            <option value="">-- 위치 선택 --</option>
+                        </select>
+                    </div>
+                    <input type="submit" data-form-role="submit" data-form-id="default-form" value="선택">
+                </div>
+            </div>
+
+            <!-- 사용언어 -->
+            <div class="cmp-form-row">
+                <div class="cmp-form-select label-on">
+                    <label for="select-lang_nm">언어</label>
+                    <div class="select">
+                        <select id="select-lang_nm" name="langCode">
+                            <option value="">-- 언어 선택 --</option>
+                        </select>
+                    </div>
+                    <input type="submit" data-form-role="submit" data-form-id="default-form" value="선택">
+                </div>
+            </div>
+
+
+            <!-- 국가 -->
+            <div class="cmp-form-row">
+                <div class="cmp-form-select label-on">
+                    <label for="select-country">국가</label>
+                    <div class="select">
+                        <select id="select-country" name="countryCode">
+                            <option value="">-- 국가 선택 --</option>
+                        </select>
+                    </div>
+                    <input type="submit" data-form-role="submit" data-form-id="default-form" value="선택">
+                </div>
+            </div>
+
+            <!-- 도시 -->
+            <div class="cmp-form-row">
+                <div class="cmp-form-select label-on">
+                    <label for="select-city">주요도시</label>
+                    <div class="select">
+                        <select id="select-city" name="cityCode">
+                            <option value="">-- 도시 선택 --</option>
+                        </select>
+                    </div>
+                    <input type="submit" data-form-role="submit" data-form-id="default-form" value="선택">
+                </div>
+            </div>
+
+            <!-- 보여진 지역 -->
+            <div class="cmp-form-row">
+                <div class="cmp-form-select label-on">
+                    <label for="select-ok">선택된 지역</label>
+                    <div class="select select_center">단쿠다</div>
+                </div>
+            </div>
+
+
+        </form>
+        <div class="cmp-stack">
+            <div class="cmp-world-weather">
+                <div>
+                    <h6 class="h6-title">단쿠다, 네팔<span>Dhankuta, Nepal</span></h6>
+                    <div class="box-b clearfix">
+                        <div class="box-left">
+
+                            <div class="weather-box01 clearfix">
+                                <ul>
+                                    <li class="first"><img
+                                            src="https://www.weather.go.kr/w/resources/icon/NY@128/Light/NB01.png"
+                                            alt="맑음">
+                                        <p>맑음</p>
+                                    </li>
+                                    <li>기온<span class="bold">-</span></li>
+                                    <!--<li>습도<span class="bold">-</span></li>-->
+                                    <li>풍향<span class="bold">-</span></li>
+                                    <li>풍속<span class="bold">-</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="time">
+                                <p class="title" style="background-color: #307eb5;">현지시간</p>
+                                <div class="top-z cityweather-current-date">2023-02-21(화)</div>
+                                <div class="bottom-z cityweather-current-time">
+                                    <ul class="clearfix">
+                                        <li>12</li>
+                                        <li>:</li>
+                                        <li>21</li>
+                                        <li>:</li>
+                                        <li>30</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="box-right">
+
+
+
+
+
+                            <div class="text-zone" id="lcoal-time-zone" data-time-zone="+0545">
+                                <p>현지 발표 시간 2023-02-20 18:00</p>
+                            </div>
+                            <table class="table-col">
+                                <caption>날짜별 날씨 기온(최고/최저) 예보</caption>
+                                <colgroup>
+                                    <col style="width:16%">
+                                    <col style="width:50%">
+                                    <col style="width:34%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>날짜</th>
+                                        <th>날씨</th>
+                                        <th>기온 (최저/최고)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2-21</td>
+                                        <td class="icon-weather"><img
+                                                src="https://www.weather.go.kr/w/resources/icon/WORLD/22.png"
+                                                alt="구름조금"><span>구름조금</span></td>
+                                        <td>
+                                            <span class="blue">12℃</span>
+
+                                            /
+                                            <span class="red">24℃</span>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <h6 class="h6">월별기후자료</h6>
+                    <div class="MT10"><iframe class="chartjs-hidden-iframe" title="내용없음"
+                            style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
+                        <canvas id="climate_chart" class="climate_chart" height="206" width="624"
+                            style="display: block; width: 694px; height: 230px;"></canvas>
+                    </div>
+                    <div class="text-zone">
+                        <p>해당자료는 해당지역의 정보를 보여주는 자료로써, 여행지역을 참고할수 있습니다.</p>
+                    </div>
+
+                    <table class="table-col tablesorter tablesorter-blue tablesorter75598c7a28e33" id="climate_table">
+                        <caption id="tablesorter75598c7a28e33caption">매달 최저기온 최고기온 강수량 안내한 표</caption>
+                        <colgroup>
+                            <col style="width:25%">
+                        </colgroup>
+                        <thead>
+                            <tr class="tablesorter-headerRow">
+                                <th data-column="0" class="tablesorter-header tablesorter-headerUnSorted"
+                                    style="user-select: none;">
+                                    <div class="tablesorter-header-inner">날짜</div>
+                                </th>
+                                <th data-column="1" class="tablesorter-header tablesorter-headerUnSorted"
+                                    style="user-select: none;">
+                                    <div class="tablesorter-header-inner">최저기온(℃)</div>
+                                </th>
+                                <th data-column="2" class="tablesorter-header tablesorter-headerUnSorted"
+                                    style="user-select: none;">
+                                    <div class="tablesorter-header-inner">최고기온(℃)</div>
+                                </th>
+                                <th data-column="3" class="tablesorter-header tablesorter-headerUnSorted"
+                                    style="user-select: none;">
+                                    <div class="tablesorter-header-inner">강수량(mm)</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="inn2" aria-live="polite" aria-relevant="all">
+                            <tr>
+                                <td>1월</td>
+                                <td><span class="blue">7.1</span></td>
+                                <td><span class="red">17.8</span></td>
+                                <td>7.5</td>
+                            </tr>
+                            <tr>
+                                <td>2월</td>
+                                <td><span class="blue">9.1</span></td>
+                                <td><span class="red">19.2</span></td>
+                                <td>9.3</td>
+                            </tr>
+                            <tr>
+                                <td>3월</td>
+                                <td><span class="blue">12.6</span></td>
+                                <td><span class="red">22.8</span></td>
+                                <td>13.8</td>
+                            </tr>
+                            <tr>
+                                <td>4월</td>
+                                <td><span class="blue">15.8</span></td>
+                                <td><span class="red">25.9</span></td>
+                                <td>19.3</td>
+                            </tr>
+                            <tr>
+                                <td>5월</td>
+                                <td><span class="blue">17.8</span></td>
+                                <td><span class="red">26.6</span></td>
+                                <td>31.2</td>
+                            </tr>
+                            <tr>
+                                <td>6월</td>
+                                <td><span class="blue">19.9</span></td>
+                                <td><span class="red">27.0</span></td>
+                                <td>44.1</td>
+                            </tr>
+                            <tr>
+                                <td>7월</td>
+                                <td><span class="blue">20.2</span></td>
+                                <td><span class="red">26.8</span></td>
+                                <td>60.0</td>
+                            </tr>
+                            <tr>
+                                <td>8월</td>
+                                <td><span class="blue">20.1</span></td>
+                                <td><span class="red">27.0</span></td>
+                                <td>54.3</td>
+                            </tr>
+                            <tr>
+                                <td>9월</td>
+                                <td><span class="blue">19.0</span></td>
+                                <td><span class="red">26.6</span></td>
+                                <td>42.9</td>
+                            </tr>
+                            <tr>
+                                <td>10월</td>
+                                <td><span class="blue">15.7</span></td>
+                                <td><span class="red">25.1</span></td>
+                                <td>23.7</td>
+                            </tr>
+                            <tr>
+                                <td>11월</td>
+                                <td><span class="blue">11.8</span></td>
+                                <td><span class="red">22.5</span></td>
+                                <td>8.0</td>
+                            </tr>
+                            <tr>
+                                <td>12월</td>
+                                <td><span class="blue">8.5</span></td>
+                                <td><span class="red">19.5</span></td>
+                                <td>6.4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-zone">
+                        <p>자료기간(1981 ~ 2010)</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="날씨.js"></script>
+
+</html>

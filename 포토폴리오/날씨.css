@@ -1,0 +1,588 @@
+@charset "utf-8";
+*{list-style: none;}
+.select_center{
+    text-align: center;
+}
+.cmp-form {
+    background-color: #eef2f7;
+    padding: 10px 20px;
+}
+
+.cmp-form [data-form-role="submit"] {
+    background: #ffc600;
+    text-align: center;
+    color: #000000;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cmp-form [data-form-role="button"] {
+    background: #fff;
+    text-align: center;
+    color: #000000;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+}
+
+.cmp-form [data-form-role="button"][data-action="xls-download"] {
+    background-color: #009AE1;
+    color: #fff;
+}
+
+.cmp-form [data-form-role="button"][data-action="download"] {
+    background-color: #009AE1;
+    color: #fff;
+}
+
+.cmp-form [data-form-role="button"][data-action="rss"] {
+    background-color: #009AE1;
+    color: #fff;
+}
+
+.cmp-form [data-form-role="button"][data-action="rss-pdf"] {
+    background-color: #009AE1;
+    color: #000;
+}
+
+.cmp-form-row {
+    display: flex;
+    padding: 10px 0;
+}
+
+.cmp-form-select {
+    display: flex;
+    margin-left: 20px;
+}
+
+.cmp-form-select label {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.cmp-form-select.label-on label {
+    margin-right: 10px;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100px;
+    height: auto;
+    overflow: unset;
+    text-align: right;
+}
+
+.cmp-form-select:first-child {
+    margin-left: 0;
+}
+
+.cmp-form-select label {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 40px;
+    padding: 0 0px;
+}
+
+.cmp-form-select .select {
+    width: 286px;
+    position: relative;
+}
+
+.cmp-form-select .select:after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 11px;
+    height: 8px;
+    margin-top: -4px;
+    background: url(../image/arrow_down03.png) no-repeat;
+    pointer-events: none;
+}
+
+.cmp-form-select select {
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    font-size: 18px;
+    word-break: break-all;
+}
+
+.cmp-form .table-col {
+    background-color: #eef2f7;
+    border-top: 1px solid #e0e6ef
+}
+
+.cmp-form .table-col th {
+    border-bottom: 1px solid #e0e6ef
+}
+
+.cmp-form .table-col td {
+    text-align: left;
+    padding: 8px 10px;
+}
+
+.cmp-form .table-col td select {
+    width: auto;
+    background: #fff;
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    font-size: 18px;
+    word-break: break-all;
+    margin-right: 4px;
+    -webkit-appearance: none;
+}
+
+.cmp-form .table-col td input[type="text"] {
+    width: auto;
+    background: #fff;
+    border-radius: 5px;
+    border: 0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    font-size: 18px;
+    word-break: break-all;
+}
+
+.cmp-form .table-col td input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.cmp-stack {
+    padding: 10px 0;
+}
+
+.cmp-stack:first-child {
+    padding-top: 0;
+}
+
+.cmp-world-weather {
+    padding: 0 10px;
+}
+
+.cmp-world-weather .climate_chart {
+    width: 100%;
+    height: 230px;
+}
+
+.cmp-world-weather .h6 {
+    font-size: 22px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.cmp-world-weather .h6-title {
+    font-size: 21px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.cmp-world-weather .h6-title>span {
+    font-size: 11px;
+    color: #8c8c8c;
+    margin-left: 7px;
+}
+
+.cmp-world-weather .clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.cmp-world-weather .weather-box01 {
+    position: relative;
+    width: 100%;
+    padding: 13px 0px;
+    margin-top: 22px;
+    margin-bottom: 12px;
+}
+
+.cmp-world-weather .weather-box01 ul {
+    text-align: center;
+    float: right;
+}
+
+.cmp-world-weather .weather-box01 ul li.first {
+    font-size: 18px;
+    font-weight: bold;
+    border-right: none;
+    padding: 0;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    border: 0;
+}
+
+.cmp-world-weather .weather-box01 ul li.first img {
+    max-width: 72px;
+}
+
+.cmp-world-weather .weather-box01 ul li.first span {
+    margin-left: 20px;
+}
+
+.cmp-world-weather .weather-box01 ul li {
+    width: 144px;
+    font-size: 14px;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-bottom: 2px dotted #cccccc;
+}
+
+.cmp-world-weather .weather-box01 ul li span.bold {
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.cmp-world-weather .weather-box01 ul li:last-child {
+    border-right: none;
+}
+
+.cmp-world-weather .text-zone {
+    width: 100%;
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.cmp-world-weather .h4-next {
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0 8px;
+    border-left: 1px solid #d5cccc;
+}
+
+.cmp-world-weather .box-b {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+
+.cmp-world-weather .box-right {
+    float: right;
+    width: calc(100% - 350px);
+    margin-left: 28px;
+}
+
+.cmp-world-weather .box-b .box-left .time {
+    border: 1px solid #e4e4e4;
+    position: relative;
+}
+
+.cmp-world-weather .box-b .box-left .time p.title {
+    position: absolute;
+    left: 0;
+    top:-35px;
+    background: #a5a5a5;
+    color: #ffffff;
+    width: 60px;
+    height: 22px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+}
+
+.cmp-world-weather .box-b .box-left .time .top-z {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.cmp-world-weather .box-b .box-left .time .bottom-z {
+    text-align: center;
+    margin-top: -4px;
+    margin-bottom: 4px;
+}
+
+.cmp-world-weather .box-b .box-left .time .bottom-z ul {
+    text-align: center;
+    margin-left: -12px;
+}
+
+.cmp-world-weather .box-b .box-left .time .bottom-z ul li {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.cmp-world-weather .box-b .box-left .time .bottom-z ul li:last-child {
+    position: relative;
+    margin-top: -4px;
+    margin-left: 3px;
+}
+
+.cmp-world-weather .box-b .box-left .time .bottom-z ul li:last-child span {
+    padding: 3px 3px 2px 3px;
+    background: #666666;
+    color: #ffffff;
+    font-size: 12px;
+    position: absolute;
+    top: -19px;
+}
+
+.cmp-world-weather .icon-weather img {
+    max-width: 48px;
+}
+
+.cmp-world-weather .icon-weather span {
+    vertical-align: middle;
+    line-height: 48px;
+}
+
+.cmp-world-weather .table-col td {
+    padding: 5px 5px;
+}
+
+.table-col font {
+    color: #000;
+}
+
+.table-col b {
+    font-weight: 400;
+}
+
+img.roma {
+    width: auto;
+    max-width: none;
+}
+
+.cmp-stack .tab-wrap01 {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.cmp-stack .tab-wrap01 [class*="tab-btn"] {
+    display: inline-block;
+}
+
+.cmp-stack .tab-wrap01 [class*="tab-btn"] button,
+.cmp-stack .tab-wrap01 [class*="tab-btn"] a {
+    font-size: 30px;
+    padding: 0 25px;
+    border-bottom: 0;
+    line-height: 60px;
+    font-weight: 300;
+    color: #000000;
+}
+
+.cmp-stack .tab-wrap01 [class*="tab-btn"] button.on,
+.cmp-stack .tab-wrap01 [class*="tab-btn"] a.on {
+    font-weight: 700;
+    color: #009ae1;
+    border-bottom: 5px solid #009ae1
+}
+
+.cmp-stack .tab-area-xm {
+    margin-top: 10px;
+}
+
+.cmp-stack .tab-area-xm .tab-wrap01 [class*="tab-btn"] a {
+    font-size: 17px;
+    padding: 0 13px;
+    line-height: 30px;
+}
+
+.cmp-stack .tab-area-xm .tab-wrap01 [class*="tab-btn"] a.on {
+    color: #000;
+    border-bottom: 2px solid #333;
+}
+
+.cmp-stack .tab-area-xm.tab-area-xsm .tab-wrap01 [class*="tab-btn"] a {
+    font-size: 15px;
+    line-height: 27px;
+}
+
+
+.cmp-stack .tab-wrap-climate [class*="tab-btn"] a {
+    line-height: 120%;
+    font-size: 26px;
+    text-align: center;
+}
+
+@media screen and (max-width: 1300px) {
+    .cmp-form {
+        background-color: #eef2f7;
+        padding: 5px 10px;
+    }
+
+    .cmp-form-row {
+        padding: 5px 0;
+        flex-wrap: wrap;
+    }
+
+    .cmp-form-select {
+        margin-left: 0px;
+    }
+
+    .cmp-form-select .select {
+        width: 200px;
+    }
+
+    .cmp-form-select .select select {
+        font-size: 16px;
+    }
+
+    .cmp-form [data-form-role="submit"] {
+        font-size: 16px;
+    }
+
+    .cmp-form [data-form-role="button"] {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .cmp-form [data-form-role="submit"] {
+        margin-left: 5px;
+        border-radius: 4px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        font-size: 13px;
+    }
+
+    .cmp-form [data-form-role="button"] {
+        margin-left: 5px;
+        border-radius: 4px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        font-size: 13px;
+    }
+
+    .cmp-form-select.label-on label {
+        padding: 0 5px;
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+    .cmp-form-select label {
+        padding: 0 5px;
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+    .cmp-form-select span {
+        padding: 0 5px;
+        font-size: 13px;
+        line-height: 30px;
+    }
+
+    .cmp-form-select select {
+        height: 30px;
+    }
+
+    .cmp-form-select .select select {
+        height: 30px;
+        line-height: 30px;
+        font-size: 13px;
+    }
+
+    .cmp-world-weather .h6-title {
+        font-size: 19px;
+    }
+
+    .cmp-world-weather .h6 {
+        font-size: 18px;
+    }
+
+    .cmp-world-weather .h6 {
+        font-size: 18px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .cmp-world-weather .box-right {
+        width: 100% !important;
+    }
+    .cmp-world-weather .box-b {
+        display: block;
+    }
+    .cmp-form-row {
+        flex-wrap: wrap;
+    }
+
+    .cmp-form-select {
+        width: 100%;
+        margin-left: 0;
+        /* flex-wrap: wrap; */
+    }
+
+    .cmp-form-select {
+        margin-top: 5px;
+    }
+
+    .cmp-form-select:first-child {
+        margin-top: 0;
+    }
+
+    .cmp-form-select .select {
+        width: calc(100% - 120px);
+    }
+}
+
+.cmp-world-weather .box-left {
+    float: none;
+    margin: auto;
+}
+
+.cmp-world-weather .box-right {
+    float: none;
+    width: 60%;
+    margin: auto;
+}
+
+.cmp-form .table-col td select {
+    border-radius: 4px;
+    border: 0;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 8px;
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.cmp-form .table-col td input[type="text"] {
+    border-radius: 4px;
+    border: 0;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 8px;
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.cmp-form .table-col td {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
